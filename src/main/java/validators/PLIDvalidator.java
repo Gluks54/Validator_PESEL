@@ -43,26 +43,34 @@ public class PLIDvalidator implements Validator {
             letterMap.put('Y',34);
             letterMap.put('Z',35);
 
-
+                    //get value from letter
             char [] firstLetters = number.toCharArray();
             int numOfFiLet = letterMap.get(firstLetters[0]);
             int numOfSecod = letterMap.get(firstLetters[1]);
             int numOfthird = letterMap.get(firstLetters[2]);
 
             int[] arrayAnnet = new int[] {7,3,1,9,7,3,1,7,3};
-            int[] arrayAnnetFinal =new int[]{numOfFiLet,
-                    numOfSecod,numOfthird,
-                    Integer.valueOf(firstLetters[3]),
-                    Integer.valueOf(firstLetters[4]),
-                    Integer.valueOf(firstLetters[5]),
-                    Integer.valueOf(firstLetters[6]),
-                    Integer.valueOf(firstLetters[7]),
-                    Integer.valueOf(firstLetters[8]),
+            int[] arrayAnnetFinal =new int[]{
+                    numOfFiLet,numOfSecod,numOfthird,
+                    Character.getNumericValue(firstLetters[3]),
+                    Character.getNumericValue(firstLetters[4]),
+                    Character.getNumericValue(firstLetters[5]),
+                    Character.getNumericValue(firstLetters[6]),
+                    Character.getNumericValue(firstLetters[7]),
+                    Character.getNumericValue(firstLetters[8]),
             };
+               //
+            int rezult = 0;
+            for (int i = 0; i <= (arrayAnnet.length -1); i++){
+               int tempAnnet =  arrayAnnet[i];
+               int tempAnnetFinal = arrayAnnetFinal[i];
+                rezult +=  tempAnnet*tempAnnetFinal;
+            }
+            int lustVerif = rezult % 10;
 
-
-
-            return true;
+            if(lustVerif == 0){
+                return true;
+            }
         }
         return false;
     }

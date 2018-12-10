@@ -30,9 +30,7 @@ public class PLID_Test {
         return  new Object[][]{
                 {"ABA300000"},
                 {"CAB803709"},
-                {"ABA300200"},
                 };
-
     }
 
 
@@ -47,8 +45,7 @@ public class PLID_Test {
         return new Object[][] {
                 {"ABA3000-00"},
                 {"ABA300200"},
-                {"ABA300600"}};
+                {"ABA300600"},
+                {"ABA300200"}};
     }
-
-
 }
