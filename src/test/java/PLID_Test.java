@@ -43,9 +43,9 @@ public class PLID_Test {
     }
     private Object[] unCorData(){
         return new Object[][] {
-                {"ABA3000-00"},
+                {"-BA300-00"},
                 {"ABA300200"},
                 {"ABA300600"},
-                {"ABA300200"}};
+                {"ABA300--0"}};
     }
 }

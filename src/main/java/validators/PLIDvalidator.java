@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class PLIDvalidator implements Validator {
+public class PLIDvalidator implements Validator <String> {
     final int firstWag = 7;
     final int secoWag = 3;
     final int thierdWag = 1;
