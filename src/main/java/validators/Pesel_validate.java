@@ -10,10 +10,21 @@ public class Pesel_validate implements Validator<String> {
         Pattern pattern = Pattern.compile("^\\d{2}[0|1]\\d[0-3][0-9]\\d{5}$");
         Matcher matcher = pattern.matcher(number);
         if(matcher.find()) {
-            return true;
+            int[] consArr = new int [] {9,7,3,1,9,7,3,1,9,7};
+            char [] pesNamArr = number.toCharArray();
+
+            int temp = 0;
+            for(int i = 0;i < consArr.length ;i++){
+                int temOfConArr = consArr[i];
+                int temOfNamArr = Character.getNumericValue(pesNamArr[i]);
+                temp +=temOfConArr*temOfNamArr;
+            }
+            int rezult = temp % 10;
+            int endingNumber = Character.getNumericValue(pesNamArr[pesNamArr.length - 1]);
+            if(rezult == endingNumber) {
+                return true;
+            }
         }
         return false;
     }
 }
-//[0-9]{2}[0-31]{2}[0-9]{5}
-//
